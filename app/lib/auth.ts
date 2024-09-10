@@ -1,8 +1,8 @@
 
 import GoogleProvider from "next-auth/providers/google";
-import NextAuth, {type DefaultSession } from "next-auth"
+
 import { prismaClient } from "@/app/lib/db";
-import Github from "next-auth/providers/github";
+
 
 export const authOption =  {
     providers: [
@@ -28,6 +28,7 @@ export const authOption =  {
                         email: params.user.email
                     }
                 })
+                
                 console.log(existingUser);
                 
                 if (existingUser) {
